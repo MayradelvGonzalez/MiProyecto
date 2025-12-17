@@ -1,0 +1,412 @@
+/* Asegura que cada sección ocupe al menos el alto de la pantalla */
+.section-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Colores de fondo para diferenciar (ajusta a tu gusto) */
+#vision { background-color: #1a099aff; color: white; font-size: larger; }
+#que-hacemos { background-color: #f4f4f4; color: white; font-size: larger; }
+#contacto { background-color: #1a099aff; color: white; }
+
+/* Ajuste para que el menú de hamburguesa funcione con <li> en lugar de <Link> */
+.boton-comenzar-nav {
+  cursor: pointer;
+  list-style: none;
+  /* ... tus otros estilos de boton-comenzar-nav ... */
+}
+/* ----------------------------------- */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 50vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #1753c9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+
+
+
+ /* Contenedor del icono */
+.nav-toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaciado uniforme */
+  width: 30px;
+  height: 21px; /* Altura fija para que el giro sea simétrico */
+  cursor: pointer;
+  z-index: 100;
+}
+
+.nav-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: #00bf63;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out; /* Animación suave */
+  transform-origin: left center; /* Punto de rotación */
+}
+
+/* --- TRANSFORMACIÓN A X --- */
+
+/* La primera línea gira 45 grados */
+.nav-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: -2px;
+}
+
+/* La línea del medio desaparece (opacidad 0) */
+.nav-toggle.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+/* La tercera línea gira -45 grados */
+.nav-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: 2px;
+}
+
+/* Menú lateral/desplegable */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Escondido por defecto */
+  width: 250px;
+  height: 100vh;
+  background-color: #110666;
+  transition: 0.7s;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu.active {
+  right: 0; /* Se desliza hacia adentro */
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+.boton-comenzar-nav {
+  background-color: #00bf63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.boton-comenzar-nav {
+  margin: 10px 0; /* Margen fijo */
+  border: 2px solid transparent; /* Reserva el espacio del borde desde el inicio */
+  transition: all 0.2s ease-in-out;
+}
+
+.boton-comenzar-nav:hover {
+  /* Si quieres borde al pasar el mouse, cámbiale el color, no el tamaño */
+  border: 2px solid #00bf63;
+  background-color: #110666;
+  transform: none !important; /* Evita cualquier movimiento de desplazamiento */
+}
+ /*boton atras */
+.boton-volver {
+  /* Tus estilos originales */
+  border: 0.1em #110666 dotted;
+  padding: 0.5em;
+  margin: 1em;
+  font-weight: bold;
+  background-color: #00bf63;
+  width: 10em;
+  color: #110666; /* Añadí este color para que combine con el borde */
+
+  /* Posicionamiento fijo abajo a la derecha */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Para que siempre esté al frente */
+
+  /* Mejoras adicionales */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.boton-volver:hover {
+  transform: scale(1.05);
+  background-color: #00a857; /* Un verde un poco más oscuro al pasar el mouse */
+}
+
+
+/* Contenedor para agrupar los botones en la esquina */
+.contenedor-botones-flotantes {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px; /* Espacio entre el botón de Inicio y Atrás */
+  z-index: 1000;
+}
+
+/* Estilo unificado para ambos botones */
+.boton-personalizado {
+  /* Tus estilos originales */
+  border: 0.2em #110666 dotted;
+  padding: 0.5em;
+  font-weight: bold;
+  background-color: #00bf63;
+  width: 10em;
+  color: #110666;
+
+  /* Reset de estilos para el Link (que es un <a>) */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.boton-personalizado:hover {
+  transform: scale(1.05);
+  background-color: #00a857;
+}
+
+/* CONTENEDOR SECCIONES */
+.main.section-container{
+  background-image: url('./img/img\ con\ logo2.jpg');
+  background-size: cover;
+  /* Evita que la imagen se repita si es pequeña */
+  background-repeat: no-repeat;
+
+  /* Centra la imagen */
+  background-position: center;
+
+
+  /* Opcional: Hace que el fondo se quede fijo al hacer scroll */
+  background-attachment: fixed;
+}
+.contenedorSecciones{
+  width: 60%;
+  height: 60vh;
+  background-color: black;
+  border-radius: 1em;
+  border:#110666 solid 0.2em;
+}
+
+.mainpage.section-container{
+  background-image: url('./img/img\ con\ logo2.jpg');
+  background-size: cover;
+  /* Evita que la imagen se repita si es pequeña */
+  background-repeat: no-repeat;
+
+  /* Centra la imagen */
+  background-position: center;
+
+
+  /* Opcional: Hace que el fondo se quede fijo al hacer scroll */
+  background-attachment: fixed;
+}
+/* --------ir arriba boton------------- */
+
+/* RESET Y GENERAL */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.section-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* MENÚ HAMBURGUESA ICONO */
+.nav-toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.nav-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: #00bf63;
+  transition: all 0.3s ease-in-out;
+  transform-origin: left center;
+}
+
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { width: 0%; opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg); }
+
+/* MENÚ LATERAL */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background-color: #110666;
+  transition: 0.5s;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu.active { right: 0; }
+
+.boton-comenzar-nav {
+  list-style: none;
+  border: 0.1em #110666 solid;
+  padding: 0.4em;
+  margin: 1em;
+  background-color: #00bf63;
+  width: 6em;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.boton-comenzar-nav:hover { transform: scale(1.05); }
+
+/* SECCIONES CON IMAGEN DE FONDO */
+
+.mainpage {
+  position: relative; /* Necesario para posicionar la capa de color encima */
+  width: 100%;
+  min-height: 100vh;
+  /* Imagen de fondo completa y fija */
+  background-image: url('./img/img\ con\ logo2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden; /* Evita que el recorte genere scroll innecesario */
+
+  /* Centrado del contenido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Esta es la capa de color transparente con el desnivel */
+.mainpage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Tu degradado original */
+  background: linear-gradient(rgba(160, 156, 195, 0.6), rgba(22, 2, 177, 0.6));
+
+  /* EL DESNIVEL: Recorta solo el color, no la sección */
+  z-index: 1; /* Se pone sobre la imagen */
+}
+
+.contenedorSecciones {
+  position: relative;
+  z-index: 2; /* Para que el texto quede por encima de la capa de color */
+}
+
+
+
+.contenedorSecciones {
+  width: 70%;
+  max-width: 800px;
+  background-color: wheat;
+  padding: 3em;
+  border: 0.1em #110666 dotted;
+  text-align: center;
+  color: #110666;
+}
+
+/* BOTÓN VOLVER ARRIBA */
+.boton-ir-arriba {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00bf63;
+  color: #110666;
+  border: 0.2em #110666 dotted;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.3s;
+}
