@@ -51,15 +51,6 @@
   color: #61dafb;
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 
 
 
@@ -409,4 +400,137 @@
   cursor: pointer;
   z-index: 1000;
   transition: 0.3s;
+}
+
+/* Titulo y codigo binario */
+
+.codigo{
+    position: absolute;
+    top: 53%; 
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    color: rgba(198, 203, 200, 0.87);
+    font-size: 0.80rem; 
+    font-family: monospace;
+    z-index: 1;
+    letter-spacing: 1px;
+    line-height: 1;
+    pointer-events: none;
+}
+.titulo{
+   color: #00bf63; 
+    font-size: 3.5em; 
+    position: relative; 
+    width:100%;
+    z-index: 2; 
+    margin: 0;
+    padding: 0 2em;
+    font-weight: 780;
+    font-family: Arial, sans-serif;
+}
+
+
+/* responsive */
+
+/* ============================================================
+   RESPONSIVE DESIGN (Media Queries)
+   ============================================================ */
+
+/* --- TABLETS (Pantallas menores a 1024px) --- */
+@media (max-width: 1024px) {
+  .contenedorSecciones {
+    width: 85%; /* Más ancho en tablets */
+    padding: 2em;
+  }
+
+  .titulo {
+    font-size: 2.8em; /* Título un poco más pequeño */
+  }
+
+  .codigo {
+    font-size: 0.7rem;
+  }
+}
+
+/* --- MÓVILES GRANDES (Pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 15px;
+  }
+
+  .contenedorSecciones {
+    width: 95%; /* Ocupa casi todo el ancho */
+    padding: 1.5em;
+    height: auto; /* Permite que el contenido crezca verticalmente */
+    min-height: 50vh;
+  }
+
+  .titulo {
+    font-size: 2.2em;
+    padding: 0 0.5em; /* Reducimos el padding lateral excesivo */
+  }
+
+  .codigo {
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+    top: 52%; /* Ajuste fino de posición */
+  }
+
+  .nav-menu {
+    width: 100%; /* El menú ocupa toda la pantalla en móviles */
+  }
+
+  /* Ajuste de botones flotantes para que no tapen contenido */
+  .contenedor-botones-flotantes {
+    bottom: 10px;
+    right: 10px;
+    flex-direction: column; /* Botones uno sobre otro para ahorrar ancho */
+    gap: 5px;
+  }
+
+  .boton-personalizado {
+    width: 8em; /* Botones más pequeños */
+    font-size: 12px;
+  }
+
+  .boton-ir-arriba {
+    width: 40px;
+    height: 40px;
+    bottom: 70px; /* Subimos el botón para que no choque con los de abajo */
+    right: 15px;
+  }
+}
+
+/* --- MÓVILES PEQUEÑOS (Pantallas menores a 480px) --- */
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.8em;
+  }
+
+  .codigo {
+    display: none; /* En pantallas muy pequeñas, el binario suele verse amontonado */
+  }
+
+  .contenedorSecciones {
+    padding: 1em;
+    border-width: 0.1em;
+  }
+
+  .nav-toggle {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* --- AJUSTE PARA PANTALLAS CON POCA ALTURA --- */
+@media (max-height: 600px) {
+  .section-container {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+  
+  .contenedorSecciones {
+    height: auto;
+  }
 }

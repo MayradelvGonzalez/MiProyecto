@@ -58,8 +58,21 @@ const HomePage = () => {
             <li className="boton-comenzar-nav" onClick={() => scrollToSection('inicio')}>Inicio</li>
           </ul>
         </nav>
+<div style={{ 
+  position: 'relative', 
+  display: 'inline-block',
+  textAlign: 'center'
+}}>
 
-        <h1 style={{color: '#00bf63', fontSize:'3em'}}>CODIBYT</h1>
+  <div className='codigo'>
+    01100011 01101111 01100100 01101001 01100010 01111001 01110100
+  </div>
+
+  <h1 className='titulo'>
+    CODIBYT
+  </h1>
+</div>
+        {/* <h1 style={{color: '#00bf63', fontSize:'3em'}}>CODIBYT</h1>01100011 01101111 01100100 01101001 01100010 01111001 01110100 */}
         <img src={logo} className="App-logo" alt="logo" /> 
         <h2 style={{color: '#00bf63'}}>Ofrecemos soluciones <br />Brindamos tranquilidad </h2>
       </header>
