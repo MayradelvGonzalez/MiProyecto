@@ -79,15 +79,14 @@ const HomePage = () => {
 
       {/* SECCIÓN VISIÓN */}
       <section id="vision" className="mainpage section-container">
-        <div className="contenedorSecciones">
-          <h1>Visión</h1>
-          <div className="contenido"><p>Nuestra visión es liderar el cambio tecnológico...</p></div>
+        <div className="contenedorSecciones vision">
+         
         </div>
       </section>
 
       {/* SECCIÓN QUÉ HACEMOS */}
       <section id="que-hacemos" className="main section-container">
-        <div className='contenedorSecciones'> 
+        <div className='contenedorSecciones hacemos'> 
           <h1 animate__animated fadeIn>Qué hacemos</h1>
           <div className="contenido"><p>Desarrollamos software a medida con pasión.</p></div>
         </div>

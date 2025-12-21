@@ -9,6 +9,7 @@
   text-align: center;
 }
 
+
 /* Colores de fondo para diferenciar (ajusta a tu gusto) */
 #vision { background-color: #1a099aff; color: white; font-size: larger; }
 #que-hacemos { background-color: #f4f4f4; color: white; font-size: larger; }
@@ -28,6 +29,9 @@
 .App-logo {
   height: 50vmin;
   pointer-events: none;
+    box-shadow: 8px 9px 5px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5em;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -372,11 +376,29 @@
   z-index: 2; /* Para que el texto quede por encima de la capa de color */
 }
 
+.contenedorSecciones.vision{
+  background-image: url('./img/parteUno.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30em;
+}
 
 
-.contenedorSecciones {
-  width: 70%;
-  max-width: 800px;
+.vision {
+  width: 90%;
+  max-width: 1400px;
+  height: fit-content;
+  background-color: #ffa500;
+  padding: 3em;
+  border: 0.1em #110666 dotted;
+  text-align: center;
+  color: #110666;
+}
+.hacemos {
+  width: 90%;
+  max-width: 1400px;
+  height: fit-content;
   background-color: wheat;
   padding: 3em;
   border: 0.1em #110666 dotted;
