@@ -377,30 +377,35 @@
 }
 
 .contenedorSecciones.vision{
-  background-image: url('./img/seccionUno.png');
+  /* background-image: url('./img/seccionUno.png'); */
+  background-color: #ffa500;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 30em;
 }
 .contenedorSecciones.hacemos{
-  background-image: url('./img/seccionDos.png');
+  /* background-image: url('./img/seccionDos.png'); */
+  background-color: #ffde59;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 30em;
 }
 .contenedorSecciones.info{
-  background-image: url('./img/seccionTres.png');
+  /* background-image: url('./img/seccionTres.png'); */
+  background-color: #fec009;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 30em;
-  background-color: transparent;
+  width: 50%;
   border-radius: 2em;
     border: 0.1em #110666 dotted;
 }
-
+.imagen1{
+  width: 70%;
+}
 .vision {
   width: 90%;
   max-width: 1400px;
@@ -467,7 +472,83 @@
     font-weight: 780;
     font-family: Arial, sans-serif;
 }
+.contenedor-flex-filas {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  align-items: center; /* Centra las filas si no ocupan todo el ancho */
+}
 
+.fila-dos, .fila-tres {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* --- CAJAS DE ARRIBA (Pequeñas) --- */
+.fila-dos .caja-vision {
+  flex: 0 1 300px; /* No crecen demasiado, base de 300px */
+  min-height: 100px; /* Altura menor */
+}
+
+/* --- CAJAS DE ABAJO (Grandes) --- */
+.fila-tres .caja-vision {
+  flex: 1; /* Crecen para ocupar todo el espacio disponible */
+  min-height: 250px; /* Altura mayor para que se vean más grandes */
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(245, 222, 179, 0.8);
+
+}
+
+/* Estilo general de las cajas */
+.caja-vision {
+  padding: 20px;
+  border: 2px solid #110666;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.caja1{
+  padding: 20px;
+  transition: all 0.3s ease;
+    flex: 0 1 300px; /* No crecen demasiado, base de 300px */
+  min-height: 100px; /* Altura menor */
+}
+.fila-dos .caja-vision{
+  border: none;
+  box-shadow: none;
+    padding: 10px;
+    color: black;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .fila-dos, .fila-tres {
+    flex-direction: column;
+  }
+  .fila-dos .caja-vision, .fila-tres .caja-vision {
+    width: 100%;
+    min-height: auto; /* En móvil que el texto mande el tamaño */
+  }
+}
+
+
+/* --- RESPONSIVE (Celulares) --- */
+@media (max-width: 768px) {
+  .fila-dos, .fila-tres {
+    flex-direction: column; /* Se ponen una debajo de otra */
+    gap: 15px;
+  }
+  
+  .caja-vision {
+    width: 100%; /* Ocupan todo el ancho en móviles */
+  }
+}
 
 /* responsive */
 
@@ -572,3 +653,7 @@
     height: auto;
   }
 }
+
+
+
+/* ------------------------- */

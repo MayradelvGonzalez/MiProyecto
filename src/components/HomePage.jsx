@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../img/Diseño sin título.gif';
+import imagen1  from '../img/gif1.gif';
 import 'animate.css';
 import '../App.css'; 
 
@@ -82,8 +83,35 @@ const HomePage = () => {
       {/* SECCIÓN VISIÓN */}
       <section id="vision" className="mainpage section-container">
         <div className="contenedorSecciones vision">
-         
+{/* Fila Superior: 2 Cajas */}
+    <div className="contenedor-flex-filas">
+      <div className="fila-dos">
+        <div className="caja1">
+        
+          <p><img src=
+          {imagen1} alt="imagen" className='imagen1'/></p>
         </div>
+        <div className="caja-vision">
+          <h2>Un solo punto de contacto para todas sus necesidades IT. 
+
+Simplifique, unifique, crezca</h2>
+          
+        </div>
+      </div>
+
+      {/* Fila Inferior: 3 Cajas */}
+      <div className="fila-tres">
+        <div className="caja-vision">
+          <p>Convertimos su  visión en una ventaja tecnológica sólida</p>
+        </div>
+        <div className="caja-vision">
+          <p>Desarrollamos sus plataformas y soluciones de inicio a fin (end-to-end), asegurando una entrega rápida, resultados completos y un seguimiento dedicado en cada etapa.</p>
+        </div>
+        <div className="caja-vision">
+          <p>Somos su socio tecnológico estratégico. Entendemos que cada minuto de inactividad cuesta dinero. Nuestra misión es garantizar la continuidad, seguridad y eficiencia de su infraestructura IT</p>
+        </div>
+      </div>
+    </div> </div>
       </section>
 
       {/* SECCIÓN QUÉ HACEMOS */}
