@@ -328,7 +328,7 @@
   padding: 0.4em;
   margin: 1em;
   background-color: #00bf63;
-  width: 6em;
+  width: 7em;
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s;
@@ -377,13 +377,29 @@
 }
 
 .contenedorSecciones.vision{
-  background-image: url('./img/parteUno.png');
+  background-image: url('./img/seccionUno.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 30em;
 }
-
+.contenedorSecciones.hacemos{
+  background-image: url('./img/seccionDos.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30em;
+}
+.contenedorSecciones.info{
+  background-image: url('./img/seccionTres.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30em;
+  background-color: transparent;
+  border-radius: 2em;
+    border: 0.1em #110666 dotted;
+}
 
 .vision {
   width: 90%;
@@ -399,7 +415,7 @@
   width: 90%;
   max-width: 1400px;
   height: fit-content;
-  background-color: wheat;
+  background-color: #ffde59;
   padding: 3em;
   border: 0.1em #110666 dotted;
   text-align: center;

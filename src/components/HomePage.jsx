@@ -54,6 +54,8 @@ const HomePage = () => {
           <ul> 
             <li className="boton-comenzar-nav" onClick={() => scrollToSection('vision')}>Visión</li>
             <li className="boton-comenzar-nav" onClick={() => scrollToSection('que-hacemos')}>Qué hacemos</li>
+            <li className="boton-comenzar-nav" onClick={() => scrollToSection('comencemos')}>Comencemos</li>
+
             <li className="boton-comenzar-nav" onClick={() => scrollToSection('contacto')}>Contacto</li>
             <li className="boton-comenzar-nav" onClick={() => scrollToSection('inicio')}>Inicio</li>
           </ul>
@@ -87,8 +89,14 @@ const HomePage = () => {
       {/* SECCIÓN QUÉ HACEMOS */}
       <section id="que-hacemos" className="main section-container">
         <div className='contenedorSecciones hacemos'> 
-          <h1 animate__animated fadeIn>Qué hacemos</h1>
-          <div className="contenido"><p>Desarrollamos software a medida con pasión.</p></div>
+     
+        </div>
+      </section>
+      
+      {/* SECCIÓN MAS INFORMACION */}
+      <section id="comencemos" className="main section-container">
+        <div className='contenedorSecciones info'> 
+     
         </div>
       </section>
 
